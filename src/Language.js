@@ -32,7 +32,7 @@ export const en = {
         my_stack: 'My stack:',
         stack_button: 'Learn more about them',
 
-        welcome_bots: <>Welcome <span>Telergam Bots!</span></>,
+        welcome_bots: <>Welcome <span>Telegram Bots!</span></>,
         bots_more: 'Learn More',
 
         previous_projects: 'My previous projects',
@@ -449,7 +449,7 @@ export const tr = {
     bots: {
         heading: <>İşinizin geleceğini<br/>Telegram botlarıyla yaratın!</>,
 
-        why: <>Artem Khi'nin botlarını neden <span>seçmelisiniz?</span></>,
+        why: <>Neden Artem Khi'nin botlarını <span>seçmelisiniz?</span></>,
         why_desc: 'Artem Khi tarafından geliştirilen her bot, en yüksek kalite ve işlevsellik standartlarını karşılar.',
         easy_interface: 'Basit arayüz',
         easy_interface_desc: 'Bot ile etkileşim, teknik bilgisi olmayan kullanıcılar için bile kolay hale gelecek.',
@@ -467,9 +467,9 @@ export const tr = {
         comfortable_usage_desc: 'Telegram, müşterilerle hızlı etkileşim sağlayan en erişilebilir ve kolay platformlardan biridir.',
         flexibility: 'Esneklik',
         flexibility_desc: 'Randevulardan müşteri siparişlerini yönetmeye kadar her şey kolayca entegre edilebilir ve kurulabilir.',
-        business_tool_ending: <>Artem Khi’nin her botu, <span>ilk günden itibaren</span> gördüğünüz pratiklik, hassasiyet ve sonuçlardır.</>,
+        business_tool_ending: <>Artem Khi tarafından yaratılan her bot ile, <span>ilk günden itibaren</span> pratiklik, hassasiyet ve sonuçları göreceksiniz.</>,
 
-        choose: <><span>Kalite ve deneyim</span> seç</>,
+        choose: <><span>Kalite ve deneyimi</span> seçin</>,
         choose_desc: 'İşletmeniz için sürdürülebilir bir çözümü hak ediyorsunuz. Artem Khi, zamanın gerekliliklerini karşılayan, işinize kolayca entegre edilebilen ve gelişiminiz için bir araç haline gelen botlar geliştiriyor.',
         choose_ending: <>Profesyonellere güvenin ve <span>işinizi daha güçlü hale getirin.</span></>,
     },
