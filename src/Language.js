@@ -32,6 +32,9 @@ export const en = {
         my_stack: 'My stack:',
         stack_button: 'Learn more about them',
 
+        welcome_bots: <>Welcome <span>Telergam Bots!</span></>,
+        bots_more: 'Learn More',
+
         previous_projects: 'My previous projects',
         portfolio: 'View portfolio'
     },
@@ -189,6 +192,9 @@ export const ru = {
 
         my_stack: 'Мой стак:',
         stack_button: 'Подробнее о языках',
+
+        welcome_bots: <>Поприветствуйте <span>Telegram-ботов!</span></>,
+        bots_more: 'Узнайте подробнее',
 
         previous_projects: 'Мои предыдущие проекты',
         portfolio: 'Портфолио',
@@ -348,6 +354,9 @@ export const tr = {
         my_stack: 'My Stack:',
         stack_button: 'Daha fazla bilgi',
 
+        welcome_bots: <><span>Telegram botları</span>na selam söyle!</>,
+        bots_more: 'Daha fazla bİlgİ',
+
         previous_projects: 'Önceki projelerim',
         portfolio: 'Portföyümü görün',
     },
@@ -438,31 +447,31 @@ export const tr = {
         mongo: 'JSON\'da veritabanları oluşturmaya yönelik, daha fazla etkileşim için sunucuya bağlanmanıza olanak tanıyan bir İnternet hizmetidir. Her türlü ve her boyutta veritabanı oluşturmak mümkündür.',
     },
     bots: {
-        heading: 'Create the future of your\nbusiness with Telegram bots!',
+        heading: <>İşinizin geleceğini<br/>Telegram botlarıyla yaratın!</>,
 
-        why: <>Why <span>choose</span> bots by Artem Khi?</>,
-        why_desc: 'Every bot developed by Artem Khi meets the highest standard of quality and functionality.',
-        easy_interface: 'Easy interface',
-        easy_interface_desc: 'Interaction with the bot will become easy even for non-tech users.',
-        range_of_opportunities: 'Wide range of opportunities',
-        range_of_opportunities_desc: 'Controlling the schedule, processing orders, or updating the list of products or services – everything is made with precision and sustainability.',
-        individual_solutions: 'Individual solutions',
-        individual_solutions_desc: 'Every solution is developed for the requirements and tasks of your business exactly.',
-        why_ending: <>Working with Artem Khi is a warranty of <span>quality and efficiency</span></>,
+        why: <>Artem Khi'nin botlarını neden <span>seçmelisiniz?</span></>,
+        why_desc: 'Artem Khi tarafından geliştirilen her bot, en yüksek kalite ve işlevsellik standartlarını karşılar.',
+        easy_interface: 'Basik arayüz',
+        easy_interface_desc: 'Bot ile etkileşim, teknik bilgisi olmayan kullanıcılar için bile kolay hale gelecek.',
+        range_of_opportunities: 'Geniş fırsat yelpazesi',
+        range_of_opportunities_desc: 'Takvimi kontrol etmek, siparişleri işlemek veya ürün ya da hizmet listesini güncellemek – her şey hassasiyet ve sürdürülebilirlik ile yapılır.',
+        individual_solutions: 'Kişisel çözümler',
+        individual_solutions_desc: 'Her çözüm, işinizin gereksinimleri ve görevleri için tam olarak geliştirilir.',
+        why_ending: <>Artem Khi ile çalışmak <span>kalite ve verimlik</span> garantisidir.</>,
 
-        business_tool: <>Fast and powerful <span>business tool</span></>,
-        business_tool_desc: 'Processes automation with a bot lets you focus on developing your business, leaving routine to technology.',
-        development_speed: 'Development speed',
-        development_speed_desc: 'Launching your bot takes just a week, so you can integrate it into your work faster.',
-        comfortable_usage: 'Comfortable usage',
-        comfortable_usage_desc: 'Telegram is one of the most accessible and easy platforms, delivering fast interaction with clients.',
-        flexibility: 'Flexibility',
-        flexibility_desc: 'From appointments to managing client\'s orders – everything is easy to integrate and set up.',
-        business_tool_ending: <>Every bot by Artem Khi is practicality, precision, and results you see <span>from day zero.</span></>,
+        business_tool: <>Hızlı ve güçlü bir <span>iş aracı</span></>,
+        business_tool_desc: 'Bir bot ile süreçlerin otomasyonu, rutini teknolojiye bırakarak işinizi geliştirmeye odaklanmanızı sağlar.',
+        development_speed: 'Geliştirmenin hızı',
+        development_speed_desc: 'Botunuzu başlatmak sadece bir hafta sürer, böylece onu işinize daha hızlı entegre edebilirsiniz.',
+        comfortable_usage: 'Rahat kullanım',
+        comfortable_usage_desc: 'Telegram, müşterilerle hızlı etkileşim sağlayan en erişilebilir ve kolay platformlardan biridir.',
+        flexibility: 'Esneklik',
+        flexibility_desc: 'Randevulardan müşteri siparişlerini yönetmeye kadar her şey kolayca entegre edilebilir ve kurulabilir.',
+        business_tool_ending: <>Artem Khi’nin her botu, <span>ilk günden itibaren</span> gördüğünüz pratiklik, hassasiyet ve sonuçlardır.</>,
 
-        choose: <>Choose <span>quality and experience</span></>,
-        choose_desc: 'You deserve a sustainable solution for your business. Artem Khi develops bots meeting the requirements of the time, easy to be integrated into your business, and becoming your tool of development.',
-        choose_ending: <>Trust professionals – and <span>make your business stronger.</span></>,
+        choose: <><span>Kalite ve deneyim</span> seç</>,
+        choose_desc: 'İşletmeniz için sürdürülebilir bir çözümü hak ediyorsunuz. Artem Khi, zamanın gerekliliklerini karşılayan, işinize kolayca entegre edilebilen ve gelişiminiz için bir araç haline gelen botlar geliştiriyor.',
+        choose_ending: <>Profesyonellere güvenin ve <span>işinizi daha güçlü hale getirin.</span></>,
     },
     language_suggestion: {
         question: 'Türkçe dilinde devam etmek istiyor musunuz?',

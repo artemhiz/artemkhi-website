@@ -90,3 +90,38 @@
         background: white;
     }
 }
+
+@media (max-width: 800px) {
+    .bots .block#heading {
+        min-height: 180px;
+    }
+    .bots .block#heading h1 {
+        font-size: 35px;
+    }
+    .bots .block h2 {
+        font-size: 28px;
+    }
+    .bots .block p {
+        font-size: 18px;
+    }
+    .bots .block .list {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .bots .block .list .line {
+        width: 80%;
+        height: 1px;
+        margin: 0 auto;
+    }
+    .bots .block .list .item h3 {
+        font-size: 25px;
+    }
+    .bots .block .list .item p {
+        font-size: 16px;
+    }
+    .bots .block .ending {
+        font-size: 16px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+}

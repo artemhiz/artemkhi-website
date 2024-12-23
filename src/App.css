@@ -419,7 +419,7 @@ footer .copyright {
         transition-duration: .625s;
         transition-delay: .3125s;
     }
-    header nav .contact img {
+    header nav .lines {
         display: none;
     }
     header nav .contact button {

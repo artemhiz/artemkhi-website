@@ -40,9 +40,9 @@ export default function Home({ setContactsOpening }) {
                 </div>
                 <h1>{data.slogan}</h1>
             </section>
-            <section className='block' id='work-with-me'>
+            <section className='block' id='work-with-me' onClick={() => navigate(window.location.pathname + '#mail')}>
                 <h4>{data.your_next}</h4>
-                <button onClick={() => navigate(window.location.pathname + '#mail')}>{data.order}</button>
+                <button>{data.order}</button>
             </section>
             <section className='block' id='imagination'>
                 <div className='top'>
@@ -69,7 +69,7 @@ export default function Home({ setContactsOpening }) {
                     <Link to={(lang ? `/${lang}` : '') + '/about'}>{data.about_button}</Link>
                 </div>
             </section>
-            <section className='block' id='stack'>
+            <section className='block' id='stack' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities`)}>
                 <h3>{data.my_stack}</h3>
                 <ul className='bubbles'>
                     <li id='html' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities#html`)}>HTML/CSS</li>
@@ -80,9 +80,9 @@ export default function Home({ setContactsOpening }) {
                 </ul>
                 <Link to={`${lang !== 'en' ? '/' + lang : ''}/capabilities#tools`}>{data.stack_button}</Link>
             </section>
-            <section className='block' id='bots'>
-                <h3>Welcome <span>Telegram Bots!</span></h3>
-                <button onClick={() => navigate(`/${lang ? lang + '/' : ''}bots`)}>Learn more</button>
+            <section className='block' id='bots' onClick={() => navigate(`/${lang ? lang + '/' : ''}bots`)}>
+                <h3>{data.welcome_bots}</h3>
+                <button>{data.bots_more}</button>
             </section>
             <section className='block' id='portfolio' onClick={() => navigate(`${lang === 'tr' || lang === 'ru' ? '/' + lang : ''}/projects`)}>
                 <div className='text'>
