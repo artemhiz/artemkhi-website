@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/.idea
 /.pnp
 .pnp.js
 
@@ -24,3 +25,6 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+/build
+/build-prod
