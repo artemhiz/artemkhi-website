@@ -1,0 +1,92 @@
+.bots ::selection {
+    background-color: #308ADF;
+}
+.bots .block {
+    padding: 15px;
+    text-align: center;
+}
+.bots span {
+    color: #308ADF;
+}
+.bots .block#heading {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-image: url(../assets/Bots.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+.bots .block#heading h1 {
+    font-size: 58px;
+}
+.bots .block h2 {
+    font-size: 40px;
+    margin: 0;
+    margin-top: 20px;
+}
+.bots .block p {
+    font-size: 20px;
+    margin: 20px;
+}
+.bots .block .ending {
+    font-size: 18px;
+}
+.bots .block .list .item h3 {
+    margin: 0;
+}
+.bots .block .list .item p {
+    font-size: 18px;
+    margin: 0;
+}
+.bots .block .list {
+    display: flex;
+    flex-direction: row;
+}
+.bots .block .list .item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.bots .block .list .line {
+    background: #308ADF;
+    width: 1px;
+    height: 20%;
+    border-radius: 300px;
+    writing-mode: vertical-lr;
+    margin: auto 0;
+    overflow: hidden;
+    color: transparent;
+    user-select: none;
+}
+.bots .block .list .line.black {
+    background: black;
+}
+.bots .block .ending {
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.bots .block#mail form .email, .bots .block#mail form .user-name {
+    border-color: #B4D5F4;
+}
+.bots .block#mail form .type {
+    border-color: #71AFE9;
+}
+.bots .block#mail form textarea {
+    border-color: #308ADF;
+}
+.bots .block#mail form button.send {
+    background-image: linear-gradient(to right, transparent 0% 85%, #B4D5F4 85% 90%, #71AFE9 90% 95%, #308ADF 95% 100%);
+}
+@media (prefers-color-scheme: dark) {
+    .bots .block .list .line.black {
+        background: white;
+    }
+}

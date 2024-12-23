@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { en, ru, tr } from "./Language";
+import { useNavigate } from "react-router-dom";
+import cv from './assets/Artem Khi CV November.pdf';
 
 export default function Footer({ lang }) {
+    const navigate = useNavigate();
     let data = {};
     switch (lang) {
-        case 'tr' || 'tr': 
+        case 'tr': 
             data = { ...tr.footer };
             break;
         case 'ru':
@@ -28,6 +31,7 @@ export default function Footer({ lang }) {
         }, []);
 
     function setLanguage(language) {
+        localStorage.setItem('ArtemkhiLanguage', JSON.stringify(language));
         switch (language) {
             case 'ru':
                 window.location.pathname = '/ru';
@@ -43,9 +47,10 @@ export default function Footer({ lang }) {
 
     return <footer>
         <div className="left">
-            <button>{data.about}</button>
-            <button>{data.projects}</button>
-            <button>{data.cv}</button>
+            <button onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/about`)}>{data.about}</button>
+            {/* <button onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/projects`)}>{data.projects}</button> */}
+            <button onClick={() => window.open('https://github.com/artemhiz')}>{data.github}</button>
+            <button onClick={() => window.open(cv)}>{data.cv}</button>
         </div>
         <div className="right">
             <div className="language-place">
@@ -59,7 +64,7 @@ export default function Footer({ lang }) {
                 </div>
                 <button className="language" onClick={() => setLanguageSelectorOpening(prev => !prev)}>{data.language_term} – {data.language}</button>
             </div>
-            
+            <p className="copyright">© {lang !== 'ru' ? 'Artem Khizhniak' : 'Артём Хижняк'}, {new Date().getFullYear()}</p>
         </div>
     </footer>
 }

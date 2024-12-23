@@ -1,0 +1,151 @@
+.cbs .block.head {
+    background-size: cover;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.cbs .block.head#services {
+    background-image: url(../assets/Capabilities-head.png);
+}
+.cbs .block.head#tools {
+    background-image: url(../assets/Tools-head.png);
+    margin-top: 25px;
+}
+.cbs .block.head h1 {
+    margin: -10px;
+    font-size: 50px;
+    z-index: 2;
+}
+.cbs .block.head h2.lighter {
+    font-weight: normal;
+    margin: 0;
+    font-size: 30px;
+    z-index: 2;
+}
+.cbs .block.head p {
+    margin: 0;
+    font-size: 20px;
+    z-index: 2;
+}
+.cbs .block.head .darkener {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.cbs h2 {
+    margin: 0;
+    margin-top: 20px;
+}
+.cbs .block {
+    padding: 10px;
+}
+.cbs .block div {
+    position: relative;
+}
+.cbs .block section.body {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+.cbs .block section.body .tool, .cbs .block section.body .service, .cbs .block section.body .highlight {
+    flex: 1;
+    text-align: center;
+}
+.cbs .block section.body .line {
+    background: linear-gradient(to bottom, var(--red) 0% 33%, var(--star) 33% 66%, var(--dark) 66% 100%);
+    width: 1px;
+    height: 25%;
+    border-radius: 300px;
+    writing-mode: vertical-lr;
+    margin: auto 0;
+    overflow: hidden;
+    color: transparent;
+    user-select: none;
+}
+.cbs .block#services section.body .line, .cbs .block#opinions section.body .line {
+    background: black;
+}
+.cbs .block section.body .tool h3, .cbs .block section.body .service h3, .cbs .block section.body .highlight h3 {
+    font-size: 30px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+.cbs .block section.body .tool p, .cbs .block section.body .service p, .cbs .block section.body .highlight p {
+    position: relative;
+    z-index: 1;
+}
+.cbs .block section.body .back {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    font-size:150px;
+    margin: 0;
+    text-align: center;
+    opacity: .1;
+    user-select: none;
+}
+
+@media (max-width: 800px) {
+    .cbs .block#head h1 {
+        font-size: 35px;
+    }
+    .cbs .block#head h2.lighter {
+        font-size: 25px;
+    }
+    .cbs .block#head p {
+        font-size: 18px;
+    }
+    .cbs .block section.body .back {
+        font-size: 100px;
+    }
+    .cbs .block section.body {
+        flex-direction: column;
+    }
+    .cbs .block section.heading {
+        margin-bottom: 20px;
+    }
+    .cbs .block section.body .line {
+        background: linear-gradient(to right, var(--red) 0% 33%, var(--star) 33% 66%, var(--dark) 66% 100%);
+        width: 80%;
+        height: 1px;
+        margin: 0 auto;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .cbs .block#services section.body .line, .cbs .block#opinions section.body .line {
+        background: white;
+    }
+    .cbs .block.head .darkener {
+        background: rgba(0, 0, 0, .25);
+    }
+    .cbs .block section.body .back {
+        opacity: .35;
+    }
+}
+@media (max-width: 800px) {
+    .cbs .block.head {
+        min-height: 200px;
+    }
+    .cbs .block.head h1 {
+        font-size: 35px;
+    }
+    .cbs .block.head h2.lighter {
+        font-size: 25px;
+    }
+    .cbs .block.head p {
+        font-size: 18px;
+    }
+    .cbs h2 {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .cbs .block section.body .tool h3, .cbs .block section.body .service h3, .cbs .block section.body .highlight h3 {
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,116 @@
+.about .block {
+    text-align: center;
+    padding: 15px;
+}
+.about .block h3 {
+    font-size: 40px;
+    margin: 15px;
+}
+.about .block p {
+    max-width: 900px;
+    margin: auto;
+}
+.about .block#main {
+    padding: 15px;
+    min-height: 30vh;
+}
+.about .block#main .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: auto -15px;
+}
+.about .block#main .left, .about .block#main .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.about .block#main .line.red, .about .block#main .line.star, .about .block#main .line.dark-color {
+    height: 5px;
+    width: 100%;
+    background-color: green;
+}
+.about .block#main .heading h1 {
+    font-size: 60px;
+    margin: auto 20px;
+}
+.about .block#main .left .line.red {
+    background: linear-gradient(to right, var(--red), transparent);
+}
+.about .block#main .right .line.red {
+    background: linear-gradient(to left, var(--red), transparent);
+}
+.about .block#main .left .line.star {
+    background: linear-gradient(to right, var(--star), transparent);
+}
+.about .block#main .right .line.star {
+    background: linear-gradient(to left, var(--star), transparent);
+}
+.about .block#main .left .line.dark-color {
+    background: linear-gradient(to right, var(--dark), transparent);
+}
+.about .block#main .right .line.dark-color {
+    background: linear-gradient(to left, var(--dark), transparent);
+}
+
+.about .block#education .card-list {
+    display: flex;
+    gap: 18px;
+    padding-bottom: 15px;
+    align-items: stretch;
+}
+.about .block#education .card {
+    max-width: 900px;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex: 1;
+}
+.about .block#education .card .text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+}
+.about .block#education .card .text p {
+    margin: 0;
+}
+.about .block#education .card .text p.years {
+    font-weight: bold;
+}
+.about .block#education .card h4 {
+    font-size: 25px;
+    margin: 10px 0px;
+}
+.about .block#education .card#college {
+    background-color: #3973a3;
+    box-shadow: 0px 0px 10px 2px rgba(57, 115, 163, .75);
+    color: white;
+}
+.about .block#education .card#can-she-code {
+    background-color: black;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .75);
+    color: pink;
+}
+.about .block#education .card#can-she-code p:not(.years) {
+    color: white;
+}
+
+.about .block#lifestyle {
+    padding-bottom: 35px;
+}
+.about .block#lifestyle p {
+    text-align: left;
+}
+
+@media (max-width: 900px) {
+    .about .block#education .card-list {
+        flex-direction: column;
+    }
+    .about .block#education .card {
+        padding: 15px;
+    }
+}

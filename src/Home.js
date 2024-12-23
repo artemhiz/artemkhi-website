@@ -1,14 +1,18 @@
 import './Home.css'
-import immersion from './assets/Rays immersion.png'
-import eye from './assets/Rays eye.jpg'
-import artemkhi from './assets/Artemkhi.png'
-import { Link, useParams } from 'react-router-dom'
+import eyeLight from './assets/Rays Eye Light.png'
+import eyeDark from './assets/Rays Eye Dark.png'
+import artemkhi from './assets/Artemkhi-memoji.png'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { en, ru, tr } from './Language';
 import { projects } from './Projects/projects_list'
+import { useEffect } from 'react'
+import Mailing from './Mailing/Mailing'
+// import { halloween } from './App'
 
-export default function Home() {
+export default function Home({ setContactsOpening }) {
     const latestProject = projects[0];
     const { lang } = useParams();
+    const navigate = useNavigate();
     let data = {};
     switch (lang) {
         case 'tr': 
@@ -22,22 +26,32 @@ export default function Home() {
             break;
     }
 
+    useEffect(() => {
+        document.title = (lang === 'ru' ? 'Главная' : lang === 'tr' ? 'Anasayfa' : 'Home') + ' | Artemkhi';
+    }, [lang])
+
     return <main className="home">
         <section id='introduction'>
-            <section className="block" id="new-life">
-                <img src={immersion} alt=''/>
+            <section className={"block" + (lang === 'tr' ? " tr" : "")} id="new-life">
+                <div className='lines'>
+                    <div className='red'>unneccessary text</div>
+                    <div className='star'>unneccessary text</div>
+                    <div className='dark-color'>unneccessary text</div>
+                </div>
                 <h1>{data.slogan}</h1>
             </section>
             <section className='block' id='work-with-me'>
                 <h4>{data.your_next}</h4>
-                <button>{data.order}</button>
+                <button onClick={() => navigate(window.location.pathname + '#mail')}>{data.order}</button>
             </section>
             <section className='block' id='imagination'>
-                <img className='for-mobile' src={eye} alt=''/>
                 <div className='top'>
                     <h4><b>{data.anything}</b></h4>
                 </div>
-                <img className='not-for-mobile' src={eye} alt=""/>
+                <img className='for-mobile light' src={eyeLight} alt=''/>
+                <img className='for-mobile dark' src={eyeDark} alt=''/>
+                <img className='not-for-mobile light' src={eyeLight} alt=""/>
+                <img className='not-for-mobile dark' src={eyeDark} alt=""/>
                 <div className='bottom'>
                     <h4>{data.you_think_and_imagine} – <b>{data.i_do}!</b></h4>
                     <p>{data.in_case}</p>
@@ -58,15 +72,19 @@ export default function Home() {
             <section className='block' id='stack'>
                 <h3>{data.my_stack}</h3>
                 <ul className='bubbles'>
-                    <li id='html'>HTML/CSS</li>
-                    <li id='js'>JavaScript</li>
-                    <li id='react'>React</li>
-                    <li id='node'>Node.js</li>
-                    <li id='redux'>Redux</li>
+                    <li id='html' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities#html`)}>HTML/CSS</li>
+                    <li id='js' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities#javascript`)}>JavaScript</li>
+                    <li id='react' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities#react`)}>React</li>
+                    <li id='node' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities#node-js`)}>Node.js</li>
+                    {/* <li id='redux'>Redux</li> */}
                 </ul>
-                <Link>{data.stack_button}</Link>
+                <Link to={`${lang !== 'en' ? '/' + lang : ''}/capabilities#tools`}>{data.stack_button}</Link>
             </section>
-            <section className='block' id='portfolio'>
+            <section className='block' id='bots'>
+                <h3>Welcome <span>Telegram Bots!</span></h3>
+                <button onClick={() => navigate(`/${lang ? lang + '/' : ''}bots`)}>Learn more</button>
+            </section>
+            <section className='block' id='portfolio' onClick={() => navigate(`${lang === 'tr' || lang === 'ru' ? '/' + lang : ''}/projects`)}>
                 <div className='text'>
                     <h3>{data.previous_projects}</h3>
                     <button>{data.portfolio}</button>
@@ -76,32 +94,6 @@ export default function Home() {
                 </div>
             </section>
         </section>
-        {/* <h2>Как создается сайт</h2>
-        <section className='stages'>
-            <section className='block' id='ideas'>
-                <div className='thumbnail'>
-                    <img />
-                </div>
-                <div className='text'>
-                    <h3>Идеи на бумаге</h3>
-                    <p>Как только появляются первые мысли о сайте-проекте, мы начинаем размышлять о том, как он должен выглядеть, какое будет его наполнение</p>
-                </div>
-            </section>
-        </section>
-        <section className='mailing'>
-            <section className='block' id='mail'>
-                <div>
-                    <img src={mail} alt='' />
-                    <h4>Приступим?</h4>
-                    <form>
-                        <input name='email' type='email' placeholder='ваша эл. почта' required />
-                        <input name='message' type='text' placeholder='ваша идея' required/>
-                        <input name='budget' type='text' placeholder='желаемый бюджет' />
-                        <button type='submit'>Давайте работать вместе</button>
-                    </form>
-                </div>
-            </section>
-        </section>
-        */}
+        <Mailing lang={lang} setContactsOpening={setContactsOpening}/>
     </main>
 }

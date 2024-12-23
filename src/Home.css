@@ -4,13 +4,61 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 70px;
     min-height: 350px;
+    padding: 15px;
 }
 .home .block#new-life h1:not(b) {
     font-weight: normal;
+    margin: auto 0;
+    font-size: 70px;
+    z-index: 2;
+}
+.home .block.tr#new-life h1 {
+    text-align: right;
+}
+.home .block#new-life .lines {
+    width: 50%;
+    color: transparent;
+    font-size: 1px;
+    displaY: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 10%;
+    right: 0;
+    user-select: none;
+}
+.home .block.tr#new-life .lines {
+    top: auto;
+    bottom: 10%;
+    right: auto;
+    left: 0;
+    transform: scaleX(-1);
+    width: 45%;
+}
+.home .block#new-life .lines div {
+    height: 15px;
+}
+.home .block#new-life .lines .red {
+    background: linear-gradient(to right, transparent, var(--red) 80%);
+}
+.home .block#new-life .lines .star {
+    background: linear-gradient(to right, transparent, var(--star) 80%);
+}
+.home .block#new-life .lines .dark-color {
+    background: linear-gradient(to right, transparent, var(--dark) 80%);
+}
+.home.halloween .block#new-life .lines .red {
+    background: linear-gradient(to right, transparent, #C70D3A 80%);
+}
+.home.halloween .block#new-life .lines .star {
+    background: linear-gradient(to right, transparent, #ED5107 80%);
+}
+.home.halloween .block#new-life .lines .dark-color {
+    background: linear-gradient(to right, transparent, #AD49E1 80%);
 }
 .home .block#new-life img {
+    display: none;
     height: 100px;
     position: absolute;
     right: 0px;
@@ -30,7 +78,7 @@
 .home .block#work-with-me h4 {
     margin: 0;
 }
-.home .block#work-with-me h4 .red {
+/* .home .block#work-with-me h4 .red {
     color: var(--red);
 }
 .home .block#work-with-me h4 .star {
@@ -38,7 +86,7 @@
 }
 .home .block#work-with-me h4 .dark {
     color: var(--dark)
-}
+} */
 .home .block#work-with-me h4.sp {
     font-weight: normal;
 }
@@ -50,6 +98,17 @@
     padding: 10px 16px;
     font-size: x-large;
     margin-top: 20px;
+    background-image: linear-gradient(135deg, white 0% 85%, var(--red) 85% 90%, var(--star) 90% 95%, var(--dark) 95% 100%);
+    background-position-y: 10vh;
+    background-repeat: no-repeat;
+    transition: .3125s;
+}
+.home .block#work-with-me button:hover {
+    background-position-y: center;
+    scale: 1.1;
+}
+.home .block#work-with-me button:active {
+    scale: .95
 }
 
 .home .block#imagination {
@@ -157,6 +216,10 @@ h2 {
     align-items: flex-start;
 }
 .home section#about-artemkhi .block#main div.image img {
+    position: relative;
+    top: 30px;
+    right: 50px;
+    scale: 1.25;
     width: 400px;
 }
 .home section#about-artemkhi .block#main div.text {
@@ -195,6 +258,7 @@ h2 {
     gap: 15px;
     justify-content: center;
     font-size: 25px;
+    cursor: pointer;
 }
 .home section#about-artemkhi .block#stack ul.bubbles li {
     flex: 1;
@@ -202,14 +266,16 @@ h2 {
     padding: 5px 15px;
     border-radius: 100px;
     transition: .15625s;
+    border: 1px solid black;
 }
-.home section#about-artemkhi .block#stack ul.bubbles li:hover:not(#react) {
-    box-shadow: 5px 5px 0px black;
-    transform: translate(-5px, -5px);
+.home section#about-artemkhi .block#stack ul.bubbles li:not(#redux):hover {
+    /* box-shadow: 5px 5px 0px black; */
+    box-shadow: 3px 3px 0px var(--red), 6px 6px 0px var(--star), 9px 9px 0px var(--dark);
+    transform: translate(-9px, -9px);
 }
-.home section#about-artemkhi .block#stack a {
+/* .home section#about-artemkhi .block#stack a {
     color: black;
-    font-size: 20px
+    font-size: 20px;
 }
 .home ul.bubbles #html {
     background-color: #FF8F1F;
@@ -231,12 +297,44 @@ h2 {
 }
 .home ul.bubbles #redux {
     background-color: #E167EF;
+} */
+
+.home .block#bots {
+    min-height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.home .block#bots h3 {
+    font-size: 50px;
+}
+.home .block#bots button {
+    font-size: x-large;
+    background: linear-gradient(135deg, white 0% 85%, var(--red) 85% 90%, var(--star) 90% 95%, var(--dark) 95% 100%);
+    background-position-y: 10vh;
+    background-repeat: no-repeat;
+    transition: .3125s;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 10px 16px;
+}
+.home .block#bots button:hover {
+    background-position-y: center;
+    scale: 1.1;
+}
+.home .block#bots button:active {
+    scale: .95
 }
 
 .home .block#portfolio {
     display: flex;
     flex-direction: row;
     padding: 25px;
+    cursor: pointer;
 }
 .home .block#portfolio .text, .home .block#portfolio .image {
     flex: 1;
@@ -256,6 +354,17 @@ h2 {
     padding: 10px 16px;
     font-size: x-large;
     margin-top: 20px;
+    background-image: linear-gradient(135deg, white 0% 85%, var(--red) 85% 90%, var(--star) 90% 95%, var(--dark) 95% 100%);
+    background-repeat: no-repeat;
+    background-position-y: 10vh;
+    transition: .3125s;
+}
+.home .block#portfolio .text button:hover {
+    scale: 1.1;
+    background-position-y: center;
+}
+.home .block#portfolio .text button:active {
+    scale: 0.95;
 }
 .home .block#portfolio .image {
     position: relative;
@@ -275,20 +384,33 @@ h2 {
     transform: translate(-15px, -10px);
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 800px) {
     .home .block#new-life {
         height: 40vh;
-        min-height: 200px
+        min-height: 200px;
+    }
+    .home .block#new-life .lines {
+        gap: 10px;
+        top: 15%;
+    }
+    .home .block.tr#new-life .lines {
+        top: auto;
+        bottom: 15%;
+    }
+    .home .block#new-life .lines div {
+        height: 10px;
     }
     .home .block#new-life img {
         height: 50px;
     }
-    .home .block#new-life h1 {
-        font-size: 50px;
+    .home .block#new-life h1:not(b) {
+        font-size: 40px;
+        max-width: 95%;
     }
     .home .block#work-with-me h4 {
         text-align: center;
         font-size: 30px;
+        width: 90%;
     }
     .home .block#work-with-me button {
         font-size: 18px;
@@ -298,10 +420,21 @@ h2 {
     }
     .home .block#imagination h4 {
         margin: 0;
-        font-size: 35px;
+        font-size: 30px;
+        width: 95%;
     }
     .home section#about-artemkhi .block#main {
         flex-direction: column-reverse;
+    }
+    .home section#about-artemkhi .block#main div.image {
+        justify-content: center;
+        align-items: center;
+    }
+    .home section#about-artemkhi .block#main div.image img {
+        scale: 1;
+        top: 0;
+        right: 10px;
+        margin-bottom: -60px;
     }
     .home section#about-artemkhi .block#main div.text {
         margin-top: 20px;
@@ -320,5 +453,24 @@ h2 {
     }
     .home .block#portfolio .text button {
         font-size: 18px;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .home .block#work-with-me button {
+        border-color: white;
+        background-image: linear-gradient(135deg, black 0% 85%, var(--red) 85% 90%, var(--star) 90% 95%, var(--dark) 95% 100%);
+    }
+    .home section#about-artemkhi .block#main div.text a {
+        color: white;
+    }
+    .home section#about-artemkhi .block#stack ul.bubbles li {
+        border-color: white;
+    }
+    .home .block#bots button {
+        background-image: linear-gradient(135deg, black 0% 85%, var(--red) 85% 90%, var(--star) 90% 95%, var(--dark) 95% 100%);
+    }
+    .home .block#portfolio .text button {
+        border-color: white;
+        background-image: linear-gradient(135deg, black 0% 85%, var(--red) 85% 90%, var(--star) 90% 95%, var(--dark) 95% 100%);
     }
 }

@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6c4cb5d3.css",
+    "main.js": "/static/js/main.93c80460.js",
+    "static/js/453.d4a10c70.chunk.js": "/static/js/453.d4a10c70.chunk.js",
+    "static/media/Artem Khi CV November.pdf": "/static/media/Artem Khi CV November.b45ce10b224fe4fb424f.pdf",
+    "static/media/Artemkhi-memoji.png": "/static/media/Artemkhi-memoji.83a4c104bb5813a00201.png",
+    "static/media/Tools-head.png": "/static/media/Tools-head.96f4935837063886b0f9.png",
+    "static/media/Capabilities-head.png": "/static/media/Capabilities-head.5e5b8e6cb2d76af692e5.png",
+    "static/media/Rays Eye Dark.png": "/static/media/Rays Eye Dark.5860a506ef1f9bebf3c6.png",
+    "static/media/Rays Eye Light.png": "/static/media/Rays Eye Light.312f601c26bab0ba1392.png",
+    "static/media/christmas.png": "/static/media/christmas.06a2a707de5457bb0be2.png",
+    "static/media/istex.png": "/static/media/istex.e33077e51f439c6ede83.png",
+    "static/media/furniture.png": "/static/media/furniture.165f60a19ecbb4998512.png",
+    "static/media/todolist.png": "/static/media/todolist.ecdfb92f01748def30d6.png",
+    "static/media/weather.png": "/static/media/weather.7b23a1d170e19b4dbf61.png",
+    "static/media/artemkhi-archive.png": "/static/media/artemkhi-archive.51b9217a45b7b3082607.png",
+    "static/media/nbsite.png": "/static/media/nbsite.69fb0a9f205c63886a7f.png",
+    "static/media/cookit.png": "/static/media/cookit.6d9142fd113412474f0f.png",
+    "static/media/istexlab.png": "/static/media/istexlab.d4c7f10d2cb8c49362e4.png",
+    "static/media/nbsite-2-0.png": "/static/media/nbsite-2-0.06f4a6dcbbba4e6d8ee0.png",
+    "static/media/tbc.png": "/static/media/tbc.4c8d8c444af8adc6f93b.png",
+    "index.html": "/index.html",
+    "main.6c4cb5d3.css.map": "/static/css/main.6c4cb5d3.css.map",
+    "main.93c80460.js.map": "/static/js/main.93c80460.js.map",
+    "453.d4a10c70.chunk.js.map": "/static/js/453.d4a10c70.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c4cb5d3.css",
+    "static/js/main.93c80460.js"
+  ]
+}

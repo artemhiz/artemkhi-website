@@ -1,0 +1,108 @@
+/*
+--red: rgb(198, 0, 0);
+--star: rgb(255, 229, 0);
+--dark: rgb(123, 1, 249);
+*/
+
+#mail {
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+}
+#mail h3 {
+    font-weight: normal;
+    font-size: 35px;
+    margin: 5px;
+}
+#mail button {
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid black;
+    background: none;
+    border-radius: 3px;
+}
+#mail button.contact {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    transition: .3125s;
+}
+#mail button.contact:hover {
+    scale: 1.05;
+}
+#mail p {
+    margin: 3px;
+}
+#mail form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+#mail form input, #mail form textarea {
+    font-size: 20px;
+    border-radius: 3px;
+    border: 1px solid black;
+    background: none;
+    padding: 5px 10px;
+    transition: .3125s;
+}
+#mail form div.horizontal {
+    display: flex;
+    justify-content: center;
+}
+#mail form .email {
+    flex: 1;
+    border-color: var(--red);
+    border-radius: 3px 0 0 3px;
+    margin-right: -1px;
+}
+#mail form .user-name {
+    flex: 1;
+    border-color: var(--red);
+    border-radius: 0 3px 3px 0;
+}
+#mail form .type {
+    border-color: var(--star);
+}
+#mail form textarea {
+    resize: vertical;
+    border-color: var(--dark);
+    min-height: 85px;
+}
+#mail form .language {
+    font-size: 20px;
+    background: none;
+    border: 1px solid var(--dark);
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: .3125s;
+}
+#mail form button.send {
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, transparent 0% 85%, var(--red) 85% 90%, var(--star) 90% 95%, var(--dark) 95% 100%);
+    background-size: 150%;
+    transition: .625s;
+}
+#mail form button.send:hover {
+    background-size: 100%;
+    margin-top: 3px;
+    scale: 1.05;
+}
+
+@media (prefers-color-scheme: dark) {
+    #mail button {
+        border-color: white;
+    }
+}
+@media (max-width: 800px) {
+    #mail form div.horizontal {
+        flex-direction: column;
+        gap: 5px;
+    }
+    #mail form .email, #mail form .user-name {
+        border-radius: 3px;
+    }
+}

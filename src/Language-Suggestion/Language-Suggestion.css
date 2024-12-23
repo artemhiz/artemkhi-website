@@ -1,0 +1,80 @@
+.block#ls {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 97vw;
+    max-width: 1050px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .05);
+    user-select: none;
+    overflow: hidden;
+    height: 140px;
+    transition: .3125s;
+}
+.block.closed#ls {
+    height: 0;
+    padding: 0;
+    border-width: 0;
+    margin-bottom: 0;
+    filter: blur(20px);
+    opacity: 0;
+}
+.block#ls .question {
+    font-size: 25px;
+    text-align: center;
+}
+.block#ls .buttons {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+.block#ls button {
+    border: 1px solid black;
+    border-radius: 3px;
+    background: white;
+    font-size: 20px;
+    width: 75px;
+    transition: .15625s;
+}
+.block#ls button:hover {
+    scale: 1.1;
+    box-shadow: 0px 2.5px 5px rgba(0, 0, 0, .25);
+}
+.block#ls button.recommended {
+    border: none;
+    background: black;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .block#ls {
+        margin-top: 110px;
+    }
+    .block#ls .question {
+        font-size: 20px;
+    }
+    .block#ls button {
+        font-size: 18px;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .block#ls {
+        border-color: white;
+    }
+    .block#ls .question {
+        width: 90%;
+    }
+    .block#ls button {
+        border-color: white;
+        color: white;
+        background: transparent;
+    }
+    .block#ls button.recommended {
+        background: white;
+        color: black;
+    }
+}
