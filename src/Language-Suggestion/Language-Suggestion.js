@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { en, ru, tr } from "../Language";
 import './Language-Suggestion.css';
+import x from '../assets/x.png';
+import darkX from '../assets/x-dark.png';
 
 export default function LanguageSuggestion() {
+    const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const [windowClosed, setWindowClosed] = useState(false);
     const lang = window.location.pathname.includes('/tr') ? 'tr' : window.location.pathname.includes('/ru') ? 'ru' : 'en';
     let data;
@@ -38,7 +41,7 @@ export default function LanguageSuggestion() {
             <button onClick={() => {
                 localStorage.setItem('ArtemkhiLanguage', JSON.stringify(lang));
                 setWindowClosed(true);
-                }}>{data.no}</button>
+                }}><img src={!dark ? x : darkX} alt="x"/></button>
             <button className="recommended" onClick={() => {
                 window.location.pathname = '/' + (data.code !== 'en' ? data.code : '');
                 setWindowClosed(true);

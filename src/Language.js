@@ -451,7 +451,7 @@ export const tr = {
 
         why: <>Artem Khi'nin botlarını neden <span>seçmelisiniz?</span></>,
         why_desc: 'Artem Khi tarafından geliştirilen her bot, en yüksek kalite ve işlevsellik standartlarını karşılar.',
-        easy_interface: 'Basik arayüz',
+        easy_interface: 'Basit arayüz',
         easy_interface_desc: 'Bot ile etkileşim, teknik bilgisi olmayan kullanıcılar için bile kolay hale gelecek.',
         range_of_opportunities: 'Geniş fırsat yelpazesi',
         range_of_opportunities_desc: 'Takvimi kontrol etmek, siparişleri işlemek veya ürün ya da hizmet listesini güncellemek – her şey hassasiyet ve sürdürülebilirlik ile yapılır.',

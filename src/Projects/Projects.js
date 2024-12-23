@@ -31,6 +31,10 @@ export default function Projects({ setContactsOpening }) {
     }, [lang])
 
     useEffect(() => {
+        console.log(selectedProject);
+    }, [selectedProject])
+
+    useEffect(() => {
         const handleScroll = () => {
             if (filter === '' && !showEdu) {
                 setFiltersOpening(false);
@@ -98,7 +102,7 @@ export default function Projects({ setContactsOpening }) {
                                 </div>
                             </section>
                         } else if (filter !== '' && !project.tools.includes(filter)) {
-                            return <section className={("item") + (!showEdu ? " closed" : "")} key={project.id}
+                            return <section className={("item") + (selectedProject && selectedProject.id === project.id ? " animated" : "") + (!showEdu ? " closed" : "")} key={project.id}
                             style={{
                                 borderColor: project.color !== '#ffffff' ? project.color : 'black',
                             }}
@@ -114,7 +118,7 @@ export default function Projects({ setContactsOpening }) {
                                 </div>
                             </section>
                         } else {
-                            return <section className="item" key={project.id}
+                            return <section className={"item" + (selectedProject && selectedProject.id === project.id ? " animated" : "")} key={project.id}
                             style={{
                                 borderColor: project.color !== '#ffffff' ? project.color : 'black',
                             }}
