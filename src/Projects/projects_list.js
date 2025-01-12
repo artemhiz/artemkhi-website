@@ -1,3 +1,4 @@
+import nbbot from '../assets/screenshots/nbbot.png';
 import tbc from '../assets/screenshots/tbc.png';
 import nb2 from '../assets/screenshots/nbsite-2-0.png';
 import istex from '../assets/screenshots/istex.png';
@@ -13,7 +14,33 @@ import furniture from '../assets/screenshots/furniture.png';
 
 export const projects = [
     {
+        id: 'borisova-jurist-bot',
+        type: 'bot',
+        title: {
+            english: 'Bot for Natalia Borisova',
+            russian: 'Бот для Натальи Борисовой',
+            turkish: 'Natalya Borisova için Bot',
+        },
+        description: {
+            english: 'This bot gives opportunity for russian citizens to apply for consulting with Natalya in terms of bankruptcy easily. With the bot, users can know what are the requirements in Russian law to go bankrupt, and make an appointment for further consultance.',
+            russian: 'Бот позволяет гражданам обратиться к Наталье по вопросам банкроства легко и просто. С помощью бота пользователи могут узнать минмальные требования для объявления себя бакротом и записаться на дальнейшее сопровождение.',
+            turkish: 'Bot Rusya vatandaşlarının iflas konularında Natalya’ya kolay bir şekilde başvurmalarını sağlar. Bot sayesinde kullanıcılar kişisel iflaslarını açıklamak için gereken asgari koşulları öğrenebilir ve sonraki süreçler için danışmanlık randevusu oluşturabilir.',
+        },
+        tools: ['Node.js'],
+        duration: {
+            english: '2 days',
+            russian: '2 дня',
+            turkish: '2 gün',
+        },
+        link: 'https://t.me/borisovajurist_bot',
+        color: '#308ADF',
+        textColor: 'white',
+        image: nbbot,
+        forStudy: false,
+    },
+    {
         id: 'tbc',
+        type: 'site',
         title: {
             english: 'QR-Menu of The Burger Company',
             russian: 'QR-Меню The Burger Company',
@@ -24,6 +51,11 @@ export const projects = [
             russian: 'Веб-сайт представляющий меню ресторана с возможностью входа для управления меню, ценами, категориями и добавления новых блюд.',
             turkish: 'Menüyü, fiyatlandırmayı, kategorileri yönetmek ve yeni yemekler eklemek için oturum açma olanağına sahip, bir restoranın menüsünü temsil eden web sitesi.',
         },
+        duration: {
+            english: '3 weeks',
+            russian: '3 недели',
+            turkish: '3 hafta',
+        },
         tools: ['HTML/CSS', 'JavaScript', 'React', 'API', 'Node.js', 'Database', 'Authorization'],
         link: 'https://the-burger-company.netlify.app',
         color: '#000000',
@@ -33,6 +65,7 @@ export const projects = [
     },
     {
         id: 'borisova-jurist-2',
+        type: 'site',
         title: {
             english: 'Natalia Borisova\'s site update',
             russian: 'Обновление сайта Натальи Борисовой',
@@ -42,6 +75,11 @@ export const projects = [
             english: "The update for the site of Natalia Borisova. Now there is a news feed, and also the dashboard for administrating them.",
             russian: "Обновление сайта Натальи Борисовой. Теперь на сайте есть лента новостей, а также панель администрирования для управления ими.",
             turkish: "Natalya sitesi için güncelleme. Artık sitede haberler var, ve ayrıca kontrol etmek için admin paneli.",
+        },
+        duration: {
+            english: '2 weeks',
+            russian: '2 недели',
+            turkish: '2 hafta',
         },
         tools: ['HTML/CSS', 'JavaScript', 'React', 'API', 'Node.js', 'Database', 'Authorization'],
         link: 'https://borisova-jurist.ru',
@@ -71,6 +109,7 @@ export const projects = [
     // },
     {
         id: 'istexlab',
+        type: 'site',
         title: {
             english: 'Cart prototype',
             russian: 'Прототип корзины',
@@ -90,6 +129,7 @@ export const projects = [
     },
     {
         id: 'artemkhi-archive',
+        type: 'site',
         title: {
             english: 'Artem Khi V1.0',
             russian: 'Artem Khi V1.0',
@@ -109,6 +149,7 @@ export const projects = [
     },
     {
         id: 'istex',
+        type: 'site',
         title: {
             english: 'İstanbul Experience',
             russian: 'İstanbul Experience',
@@ -128,6 +169,7 @@ export const projects = [
     },
     {
         id: 'cookit',
+        type: 'site',
         title: {
             english: 'CooKit – a site with a shopping list',
             russian: 'CooKit – сайт со списком покупок',
@@ -147,6 +189,7 @@ export const projects = [
     },
     {
         id: 'weather',
+        type: 'site',
         title: {
             english: 'Weather',
             russian: 'Погода',
@@ -166,6 +209,7 @@ export const projects = [
     },
     {
         id: 'christmas',
+        type: 'site',
         title: {
             english: 'Timer for Christmas',
             russian: 'Таймер до Рождества',
@@ -185,6 +229,7 @@ export const projects = [
     },
     {
         id: 'todos',
+        type: 'site',
         title: {
             english: 'Todo list',
             russian: 'Сайт-список дел',
@@ -204,6 +249,7 @@ export const projects = [
     },
     {
         id: 'borisova-jurist',
+        type: 'site',
         title: {
             english: 'Natalia Borisova the lawyer',
             russian: 'Юрист Наталья Борисова',
@@ -223,6 +269,7 @@ export const projects = [
     },
     {
         id: 'furniture',
+        type: 'site',
         title: {
             english: 'Furniture Gallery',
             russian: 'Галерея мебели',

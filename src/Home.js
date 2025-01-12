@@ -26,6 +26,11 @@ export default function Home({ setContactsOpening }) {
             break;
     }
 
+    function stopPropagationAndNavigate(event, link) {
+        event.stopPropagation();
+        navigate(link);
+    }
+
     useEffect(() => {
         document.title = (lang === 'ru' ? 'Главная' : lang === 'tr' ? 'Anasayfa' : 'Home') + ' | Artemkhi';
     }, [lang])
@@ -72,13 +77,13 @@ export default function Home({ setContactsOpening }) {
             <section className='block' id='stack' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities`)}>
                 <h3>{data.my_stack}</h3>
                 <ul className='bubbles'>
-                    <li id='html' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities#html`)}>HTML/CSS</li>
-                    <li id='js' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities#javascript`)}>JavaScript</li>
-                    <li id='react' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities#react`)}>React</li>
-                    <li id='node' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities#node-js`)}>Node.js</li>
+                    <li id='html' onClick={event => stopPropagationAndNavigate(event, `${lang !== 'en' ? '/' + lang : ''}/capabilities#html`)}>HTML/CSS</li>
+                    <li id='js' onClick={event => stopPropagationAndNavigate(event, `${lang !== 'en' ? '/' + lang : ''}/capabilities#javascript`)}>JavaScript</li>
+                    <li id='react' onClick={event => stopPropagationAndNavigate(event, `${lang !== 'en' ? '/' + lang : ''}/capabilities#react`)}>React</li>
+                    <li id='node' onClick={event => stopPropagationAndNavigate(event, `${lang !== 'en' ? '/' + lang : ''}/capabilities#node-js`)}>Node.js</li>
                     {/* <li id='redux'>Redux</li> */}
                 </ul>
-                <Link to={`${lang !== 'en' ? '/' + lang : ''}/capabilities#tools`}>{data.stack_button}</Link>
+                <Link onClick={event => event.stopPropagation()} to={`${lang !== 'en' ? '/' + lang : ''}/capabilities#tools`}>{data.stack_button}</Link>
             </section>
             <section className='block' id='bots' onClick={() => navigate(`/${lang ? lang + '/' : ''}bots`)}>
                 <h3>{data.welcome_bots}</h3>

@@ -63,10 +63,10 @@ export const en = {
         my_projects: 'My projects',
         filters: 'filters',
         filters_cancel: 'clean filters',
-        educational_filter: 'Educational apps',
+        educational_filter: 'Pet projects',
         database: 'Database',
         authorization: 'Authorization',
-        educational: 'Educational',
+        educational: 'Pet project',
         yet_to_come: 'Yet to come...',
 
         back: 'Back',
@@ -75,6 +75,7 @@ export const en = {
         were: ' were',
         used: ' used on this site',
         to_the_site: 'To the site',
+        to_the_bot: 'To the bot',
     },
     about: {
         who_is: 'Who is Artem Khi',
@@ -124,6 +125,7 @@ export const en = {
         back: 'Back-end tools',
         node: 'The tool made to write server actions using JavaScript. With it, you can write APIs needed for interaction with additional data not needing instant download, or for data which may change frequently.',
         mongo: 'The internet service for making JSON database, allowing connection to server for further interaction. Any kind and size for database is possible with it.',
+        telegramAPI: 'An easy and powerful tool to make your Telegram Bot. With working on Node.js, along with your website\'s server activity, bot can access either same data as a website or can help administrating it.',
     },
     bots: {
         heading: 'Create the future of your\nbusiness with Telegram bots!',
@@ -193,7 +195,7 @@ export const ru = {
         my_stack: 'Мой стак:',
         stack_button: 'Подробнее о языках',
 
-        welcome_bots: <>Поприветствуйте <span>Telegram-ботов!</span></>,
+        welcome_bots: <>Поприветствуйте<br/><span>Telegram-ботов!</span></>,
         bots_more: 'Узнайте подробнее',
 
         previous_projects: 'Мои предыдущие проекты',
@@ -223,10 +225,10 @@ export const ru = {
         my_projects: 'Мои проекты',
         filters: 'фильтры',
         filters_cancel: 'очистить фильтры',
-        educational_filter: 'Учебные приложения',
+        educational_filter: 'Пет-проекты',
         database: 'База данных',
         authorization: 'Авторизация',
-        educational: 'Для обучения',
+        educational: 'Пет-проект',
         yet_to_come: 'Уже на подходе...',
 
         back: 'Назад',
@@ -235,6 +237,7 @@ export const ru = {
         were: ' были использованы на сайте',
         used: '',
         to_the_site: 'К сайту',
+        to_the_bot: 'К боту',
     },
     about: {
         who_is: 'Кто такой Artem Khi',
@@ -284,6 +287,7 @@ export const ru = {
         back: 'Бэкенд',
         node: 'Инструмент, позволяющий описывать действия со стороны сервера, используя JavaScript. С его помощью можно писать API, необходимые для взаимодействия с дополнительными данными, не нуждающимся в немедленной загрузке, или с данными, которые меняются слишком часто.',
         mongo: 'Интернет-сервис для создания баз данных на JSON, позволяющий подключиться к серверу для дальнейшего взаимодействия. Базы данных любого размера с ним – возможны.',
+        telegramAPI: 'Простой и мощный инструмент для создания Telegram-ботов. Работая на Node.js, на одном сервере с вашим веб-сайтом, бот может пользоваться информацией с сайта или помогать его администрировать.',
     },
     bots: {
         heading: 'Создавайте будущее своего\nбизнеса с ботами Telegram!',
@@ -354,7 +358,7 @@ export const tr = {
         my_stack: 'My Stack:',
         stack_button: 'Daha fazla bilgi',
 
-        welcome_bots: <><span>Telegram botları</span>na selam söyle!</>,
+        welcome_bots: <>Merhaba <span>Telegram botları!</span></>,
         bots_more: 'Daha fazla bİlgİ',
 
         previous_projects: 'Önceki projelerim',
@@ -384,10 +388,10 @@ export const tr = {
         my_projects: 'Projelerim',
         filters: 'filtreler',
         filters_cancel: 'filtreleme iptal',
-        educational_filter: 'Eğitici uygulamalar',
+        educational_filter: 'Pet projeler',
         database: 'Veritabanı',
         authorization: 'Kimlik doğrulama',
-        educational: 'Eğitici',
+        educational: 'Pet proje',
         yet_to_come: 'Zaten yolda...',
 
         back: 'Geri',
@@ -395,7 +399,8 @@ export const tr = {
         was: '',
         were: '',
         used: ' bu sitede kullanıldı',
-        to_the_site: 'Siteye',
+        to_the_site: 'Siteye git',
+        to_the_bot: 'Bota git',
     },
     about: {
         who_is: 'Artem Khi kimdir?',
@@ -437,7 +442,7 @@ export const tr = {
         tools_heading: 'Kullandığım araçlar',
         tools_heading_2: 'Siteleri istikrarlı, hızlı ve öne çıkarmak için',
 
-        front: 'Fornt-end araçları',
+        front: 'Front-end araçları',
         html: 'Sitede gördüğünüz her şey HTML ile yazılmıştır. Bu, İnternet\'teki her şey için gerekli olan bir hiper metin düzeni dilidir. CSS ana yardımcısıdır. Bu, sitedeki her nesneyi açıklayan bir stil sayfasıdır.',
         js: 'Sitenin hem istemci hem de sunucu kısımları için bir programlama dilidir. Sitenin iç süreçleriyle ilgili her şeyi oluşturmanıza, yönetmenize ve etkileşimde bulunmanıza olanak tanır.',
         react: 'Bana göre bir açılış sayfasından daha büyük her şey için bir durum yöneticisi gereklidir. Web uygulamasının çalışması için gerekenler hakkında bilgi içerebilir ve sitedeki nesneleri kontrol edebilir. Ayrıca React bunu temel aldığından JavaScript geliştirmeyi kolaylaştırır.',
@@ -445,6 +450,7 @@ export const tr = {
         back: 'Back-end araçları',
         node: 'JavaScript kullanarak sunucu tarafı eylemleri yazmanıza olanak tanıyan bir araçtır. Bununla, hemen yüklenmesi gerekmeyen ek verilerle veya çok sık değişen verilerle etkileşim kurmak için gereken API\'leri yazabilirsiniz.',
         mongo: 'JSON\'da veritabanları oluşturmaya yönelik, daha fazla etkileşim için sunucuya bağlanmanıza olanak tanıyan bir İnternet hizmetidir. Her türlü ve her boyutta veritabanı oluşturmak mümkündür.',
+        telegramAPI: 'Telegram Bot\'unuzu kolayca ve etkili bir şekilde oluşturabileceğiniz güçlü bir araç. Node.js ile çalışarak, web sitenizin sunucu etkinlikleriyle uyumlu bir şekilde bot hem web sitesiyle aynı verilere erişebilir, hem de yönetim süreçlerine destek olabilir.',
     },
     bots: {
         heading: <>İşinizin geleceğini<br/>Telegram botlarıyla yaratın!</>,

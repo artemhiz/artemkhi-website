@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { en, ru, tr } from "./Language";
 import { useNavigate } from "react-router-dom";
-import cv from './assets/Artem Khi CV November.pdf';
+import cv from './assets/Artem Khi CV December.pdf';
 
 export default function Footer({ lang }) {
     const navigate = useNavigate();

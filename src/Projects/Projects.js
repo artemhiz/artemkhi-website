@@ -1,18 +1,23 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Projects.css';
 import { projects } from "./projects_list";
 import { en, ru, tr } from '../Language';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ProjectWindow from './Project-Window';
 import Mailing from '../Mailing/Mailing';
 
 export default function Projects({ setContactsOpening }) {
-    const { lang } = useParams();
+    const { lang, projectId } = useParams();
     const [showNoRes, setShowNoRes] = useState(false);
     const [selectedProject, setSelectedProject] = useState();
     const [filtersOpened, setFiltersOpening] = useState(false);
     const [filter, setFilter] = useState('');
     const [showEdu, setShowEdu] = useState(false);
+    const filterButtons = useRef();
+    const navigate = useNavigate();
+    const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const mobile = window.matchMedia('(max-width: 800px)').matches;
+
     let data = {};
     switch (lang) {
         case 'tr': 
@@ -31,20 +36,26 @@ export default function Projects({ setContactsOpening }) {
     }, [lang])
 
     useEffect(() => {
-        console.log(selectedProject);
-    }, [selectedProject])
+        if (projectId) {
+            setSelectedProject(projects.filter(project => project.id === projectId)[0]);
+        } else {
+            setSelectedProject();
+        }
+    }, [projectId])
 
     useEffect(() => {
         const handleScroll = () => {
-            if (filter === '' && !showEdu) {
+            if ((filter === '' && !showEdu && !showNoRes) || (mobile && !showNoRes)) {
                 setFiltersOpening(false);
+            } else if (showNoRes && mobile) {
+                setFiltersOpening(true);
             }
         }
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-        }, [filter, showEdu])
+        }, [filter, showEdu, mobile, showNoRes])
 
         useEffect(() => {
             if (filter) {
@@ -63,7 +74,7 @@ export default function Projects({ setContactsOpening }) {
                     {data.filters}
                 </p>
                 <span className={'arrow' + (filtersOpened ? ' opened' : '')} onClick={() => setFiltersOpening(prev => !prev)}>{'▷'}</span>
-                <div className={'buttons' + (!filtersOpened ? ' closed' : '')}>
+                <div className={'buttons' + (!filtersOpened ? ' closed' : '')} style={{ top: (filter !== '' || showEdu) && mobile ? '165%' : '130%' }} ref={filterButtons}>
                     <button className={'for-study' + (showEdu ? " chosen" : "")} onClick={() => setShowEdu(prev => !prev)}>{data.educational_filter}</button>
                     {
                         ['JavaScript', 'React', 'API', 'Node.js', 'Redux', 'Authorization', 'Database'].map(tool => {
@@ -86,11 +97,11 @@ export default function Projects({ setContactsOpening }) {
                 {
                     projects.map(project => {
                         if (project.forStudy || (filter !== '' && !project.tools.includes(filter))) {
-                            return <section className={("item") + (!showEdu || (filter !== '' && !project.tools.includes(filter)) ? " closed" : "")} key={project.id}
+                            return <section className={("item") + (selectedProject && selectedProject.id === project.id ? " animated" : "") + (!showEdu || (filter !== '' && !project.tools.includes(filter)) ? " closed" : "")} key={project.id}
                             style={{
-                                borderColor: project.color !== '#ffffff' ? project.color : 'black',
+                                borderColor: !dark && project.color !== '#ffffff' ? project.color : project.color !== '#000000' ? project.color : 'white',
                             }}
-                            onClick={() => setSelectedProject(project)}>
+                            onClick={() => navigate(`${lang ? ('/' + lang) : ''}/projects/${project.id}`)}>
                                 <img src={project.image} alt=""/>
                                 <div className="title"
                                 style={{
@@ -104,9 +115,9 @@ export default function Projects({ setContactsOpening }) {
                         } else if (filter !== '' && !project.tools.includes(filter)) {
                             return <section className={("item") + (selectedProject && selectedProject.id === project.id ? " animated" : "") + (!showEdu ? " closed" : "")} key={project.id}
                             style={{
-                                borderColor: project.color !== '#ffffff' ? project.color : 'black',
+                                borderColor: !dark && project.color !== '#ffffff' ? project.color : project.color !== '#000000' ? project.color : 'white',
                             }}
-                            onClick={() => setSelectedProject(project)}>
+                            onClick={() => navigate(`${lang ? ('/' + lang) : ''}/projects/${project.id}`)}>
                                 <img src={project.image} alt=""/>
                                 <div className="title"
                                 style={{
@@ -120,9 +131,9 @@ export default function Projects({ setContactsOpening }) {
                         } else {
                             return <section className={"item" + (selectedProject && selectedProject.id === project.id ? " animated" : "")} key={project.id}
                             style={{
-                                borderColor: project.color !== '#ffffff' ? project.color : 'black',
+                                borderColor: !dark && project.color !== '#ffffff' ? project.color : project.color !== '#000000' ? project.color : 'white',
                             }}
-                            onClick={() => setSelectedProject(project)}>
+                            onClick={() => navigate(`${lang ? ('/' + lang) : ''}/projects/${project.id}`)}>
                                 <img src={project.image} alt=""/>
                                 <div className="title"
                                 style={{

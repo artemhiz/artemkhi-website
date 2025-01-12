@@ -1,3 +1,7 @@
+.projects {
+    overflow-x: hidden;
+    user-select: none;
+}
 .projects .block {
     display: flex;
     flex-direction: column;
@@ -12,11 +16,13 @@
 }
 .projects .filters {
     max-width: 100%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
     cursor: pointer;
+    user-select: none;
 }
 .projects .filters p {
     font-size: 20px;
@@ -26,10 +32,11 @@
     transition: .625s;
 }
 .projects .filters .arrow.opened {
-    rotate: 180deg;
+    transform: rotateY(180deg);
 }
 .projects .filters .buttons {
-    padding: 10px 0px;
+    margin-right: -15px;
+    padding: 15px 15px;
     display: flex;
     gap: 5px;
     overflow: scroll;
@@ -50,7 +57,12 @@
     color: black;
     white-space: nowrap;
     border-radius: 30px;
-    transition: .625s;
+    transition: .15625s;
+}
+.projects .filters .buttons button:hover {
+    /* scale: 1.05; */
+    font-weight: bold;
+    /* box-shadow: 0px 0px 2.5px 1.25px rgba(0, 0, 0, .25); */
 }
 .projects .filters .buttons button.chosen:not(.for-study) {
     font-weight: bold;
@@ -58,9 +70,10 @@
 }
 .projects .filters .buttons button.for-study {
     background-image: linear-gradient(90deg, var(--red) 0% 2.33%, var(--star) 2.33% 4.66%, var(--dark) 4.66% 7%, transparent 7% 100%);
-    background-position-x: -1em;
+    background-position-x: -2em;
     background-repeat: no-repeat;
-    transition: .625s;
+    padding: 5px 30px;
+    transition: .3125s;
 }
 .projects .filters .buttons button.for-study.chosen {
     background-position: 0px;
@@ -85,8 +98,7 @@
 }
 .projects .list .no-result {
     opacity: .25;
-    margin: auto 0;
-    height: 30px;
+    margin: 35px;
     transition: .625s;
 }
 .projects .list .no-result.closed {
@@ -94,6 +106,7 @@
     opacity: 0;
     overflow: hidden;
     height: 0;
+    margin: 0;
 }
 .projects .list {
     user-select: none;
@@ -108,9 +121,12 @@
     height: 400px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: 15px;
     border: 1.5px solid transparent;
-    transition: .625s;
+    transition: .3125s;
     cursor: pointer;
 }
 .projects .list .item img {
@@ -124,13 +140,17 @@
     height: 0;
     filter: blur(20px);
     opacity: 0;
+    transition: .625s;
 }
 .projects .list .item:hover {
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .5);
+    /* box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .5); */
+    scale: 1.05;
     transition: .3125s;
 }
 .projects .list .item:active {
-    box-shadow: none;
+    /* box-shadow: none; */
+    scale: .95;
+    transition: .3125s;
 }
 .projects .list .item.animated {
     filter: blur(20px);
@@ -138,7 +158,9 @@
     scale: 1.2;
 }
 .projects .list .item .title {
-    padding: 0px 10px;
+    min-height: 20%;
+    padding: 20px;
+    padding-top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -147,11 +169,15 @@
     width: calc(100% - 20px);
     top: 0px;
 }
+.projects .list .item .title .name {
+    margin: 0;
+}
 .projects .list .item .title .for-study {
     font-size: 18px;
     padding: 3px 5px;
     border: 1px solid transparent;
     border-radius: 5px;
+    text-align: center;
 }
 
 .project {
@@ -174,6 +200,127 @@
     pointer-events: none;
 }
 .project .window {
+    gap: 0;
+    width: 98%;
+    max-width: 900px;
+    height: 60vh;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    transition: .3125s;
+}
+.project.closed .window {
+    scale: .85;
+    opacity: 0;
+    filter: brightness(2);
+}
+.project .window .heading {
+    user-select: none;
+}
+.project .window button.back {
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    transition: .15625s;
+}
+.project .window button.back:hover {
+    padding-left: 15px;
+}
+.project .window button.back:active {
+    transform: translateX(-5px);
+}
+.project .window button.back span {
+    display: inline-block;
+    transform: translateX(10px);
+    opacity: 0;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    transition: .15625s;
+}
+.project .window button.back:hover span {
+    transform: none;
+    opacity: 1;
+    filter: none;
+    -webkit-filter: none;
+}
+.project .window .body {
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0px 15px;
+}
+.project .window .text {
+    width: 60%;
+    max-height: 50vh;
+    padding-left: 10px;
+    overflow-x: hidden;
+    user-select: text;
+}
+.project .window .text div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+}
+.project .window .text .title {
+    font-size: 40px;
+    margin: 0;
+}
+.project .window .text .for-study {
+    align-self: flex-start;
+    font-size: 18px;
+    padding: 5px 15px;
+    margin: 0;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.project .window .text .description, .project .window .text .used, .project .window .text .duration {
+    font-size: 18px;
+    margin: 5px 0px;
+}
+.project .window .image {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.project .window .image img {
+    width: 100%;
+    max-width: 600px;
+    transition: .625s;
+    border-radius: 5px;
+    border: 1px solid black;
+    pointer-events: all;
+}
+.project .window .image img:hover {
+    scale: .90;
+}
+.project .window .image img:active {
+    scale: 1;
+    filter: blur(5px);
+    box-shadow: none;
+}
+.project .window .image .to-site {
+    font-size: 20px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: .3125s;
+}
+.project .window .image .to-site:hover {
+    scale: 1.1;
+}
+.project .window .image .to-site:active {
+    scale: .95;
+}
+/*  .project .window {
     background-color: white;
     border-radius: 20px;
     display: flex;
@@ -252,7 +399,7 @@
 }
 .project button.to-site:active {
     scale: .95
-}
+} */
 /* .project .block {
     display: flex;
     flex-direction: column;
@@ -311,16 +458,13 @@
     .projects .list .item {
         filter: brightness(.9);
     }
-    .projects .list .item:hover {
-        box-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
-    }
     .project .window {
         background: black;
     }
     .project .window button.back {
         color: white;
     }
-    .project .for-study {
+    .project .window .text .for-study {
         border-color: white;
     }
     .project .used .tools .separator {
@@ -330,57 +474,148 @@
 @media (max-width: 800px) {
     .projects .filters {
         flex-direction: column;
+        overflow: visible;
     }
     .projects .filters .arrow {
         rotate: 90deg;
-    }
-    .projects .filters .arrow.opened {
-        rotate: 270deg
+        transition: .3125s;
     }
     .projects .filters .buttons {
         flex-wrap: wrap;
         align-items: center;
         overflow-x: visible;
+        margin-right: 0;
+        padding: 5px;
+        width: 90vw;
+        transition: .3125s;
+
+        position: absolute;
+        top: 110%;
+        z-index: 3;
+
+        background: rgba(255, 255, 255, .85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid black;
+        border-radius: 24px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, .25);
+        transition: .2038s;
     }
     .projects .filters .buttons button {
         flex: 1;
     }
+    .projects .filters .buttons button:hover {
+        font-weight: normal;
+    }
     .projects .filters .buttons.closed {
-        width: 100%;
-        height: 0;
+        width: 90vw;
+        scale: .7;
+        translate: 0 -20%;
+        filter: blur(20px);
+        pointer-events: none;
+        visibility: hidden;
     }
     .projects .filters .buttons button.chosen:not(.for-study) {
         background-color: black;
         color: white;
         padding: 5px 15px;
     }
+    .projects .list .no-result {
+        margin-top: 160px;
+    }
     .projects .list .item {
         height: auto;
+        transition: .15625s;
+    }
+    .projects .list .item.animated {
+        scale: 2;
+        filter: blur(40px);
     }
     .projects .list .item .title {
+        padding-top: 7.5px;
         font-size: 18px;
+    }
+    .projects .list .item .title .for-study {
+        font-size: 15px;
     }
     .projects .list .item img {
         margin-top: 50px;
     }
     .project {
         z-index: 300;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    .project.closed .window {
+        border-radius: 100px;
+        scale: .8;
+        filter: blur(20px);
     }
     .project .window {
         padding: 15px 10px;
-        width: 90%;
-        height: 80%;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        border-radius: 0;
+        box-shadow: none;
     }
-    .project .title {
+    .project .window button.back {
+        min-height: 47px;
+    }
+    .project .window button.back span {
+        opacity: 1;
+        filter: none;
+        -webkit-filter: none;
+    }
+    .project .window .body {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .project .window .text {
+        width: 100%;
+        padding: 0;
+    }
+    .project .window .text .title {
+        font-size: 30px;
+        margin: auto;
+    }
+    .project .window .text .for-study {
+        align-self: center;
+    }
+    .project .window .image {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .project .window .image img {
+        max-width: 95%;
+    }
+    .project .text div.not-for-mobile {
+        display: none;
+    }
+    .project .image div.for-mobile {
+        max-height: 34vh;
+        overflow-y: scroll;
+        font-size: 18px;
+        padding-bottom: 60px;
+    }
+    /* .project .title {
         font-size: 25px;
     }
     .project .title, .project .description, .project .used {
         margin: 5px;
-    }
+    } */
 }
 @media (max-width: 800px) and (prefers-color-scheme: dark) {
+    .projects .filters .buttons {
+        background-color: rgba(0, 0, 0, .5);
+        border-color: white;
+    }
     .projects .filters .buttons button.chosen:not(.for-study) {
         background-color: white;
         color: black;
+    }
+    .project .window .text .for-study {
+        border-color: white;
     }
 }

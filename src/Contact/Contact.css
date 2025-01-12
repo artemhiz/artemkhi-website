@@ -7,6 +7,7 @@ section.contact.closed {
     pointer-events: none;
     filter: blur(40px) brightness(200%);
     opacity: 0;
+    visibility: hidden;
 }
 section.contact {
     position: fixed;
@@ -86,24 +87,27 @@ button.contact.for-mobile {
     position: fixed;
     bottom: 22.5px;
     right: 15px;
-    z-index: 2;
+    z-index: 3;
     background-image: url(../assets/social/communicate.png);
-    background-color: rgba(255, 255, 255, .75);
+    background-color: rgba(255, 255, 255, .85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 50%;
     border: 1px solid black;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .25);
     transition: .3125s;
 }
 button.contact.for-mobile.hidden {
     /* width: 75px;
     height: 75px;
     filter: blur(5px);
-    border-radius: 10px; */
+    border-radius: 10px;
+    opacity: 0; */
 
     filter: blur(5px);
-    opacity: .25;
+    opacity: 0;
     transform: translate(-50%, 0);
+    visibility: hidden;
 }
 button.contact.for-mobile img {
     display: none;
@@ -133,19 +137,25 @@ button.contact.for-mobile img {
 }
 @media (max-width: 800px) {
     section.contact.closed {
+        width: 40%;
         transform: translate(40%, 0);
     }
     section.contact {
         top: auto;
-        bottom: 10px;
+        bottom: 15px;
         z-index: 3;
+
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+
+        transition: .2083s;
     }
     section.contact .list {
         gap: 5px;
-        padding-right: 90px;
+        padding-right: 102px;
     }
     section.contact .list button {
         font-size: 15px;
+        transition: .2083s;
     }
     section.contact .list button img {
         width: 35px;

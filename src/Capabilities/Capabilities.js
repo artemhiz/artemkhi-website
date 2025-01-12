@@ -114,6 +114,11 @@ export default function Capabilities() {
                     <h3>MongoDB</h3>
                     <p>{data.mongo}</p>
                 </div>
+                <div className='line'>unnecessary text</div>
+                <div className='tool' id='express'>
+                    <h3>Node Telegram Bot API</h3>
+                    <p>{data.telegramAPI}</p>
+                </div>
             </section>
         </section>
     </main>

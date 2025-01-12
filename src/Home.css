@@ -258,7 +258,6 @@ h2 {
     gap: 15px;
     justify-content: center;
     font-size: 25px;
-    cursor: pointer;
 }
 .home section#about-artemkhi .block#stack ul.bubbles li {
     flex: 1;
@@ -267,6 +266,7 @@ h2 {
     border-radius: 100px;
     transition: .15625s;
     border: 1px solid black;
+    cursor: pointer;
 }
 .home section#about-artemkhi .block#stack ul.bubbles li:not(#redux):hover {
     /* box-shadow: 5px 5px 0px black; */
@@ -300,12 +300,12 @@ h2 {
 } */
 
 .home .block#bots {
+    padding: 0 20px;
     min-height: 150px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 30px;
 }
 .home .block#bots h3 {
     font-size: 50px;
@@ -321,6 +321,7 @@ h2 {
     transition: .3125s;
     border-width: 1px;
     border-style: solid;
+    border-color: black;
     border-radius: 5px;
     text-transform: uppercase;
     padding: 10px 16px;
@@ -337,7 +338,6 @@ h2 {
     display: flex;
     flex-direction: row;
     padding: 25px;
-    cursor: pointer;
 }
 .home .block#portfolio .text, .home .block#portfolio .image {
     flex: 1;
@@ -374,6 +374,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .home .block#portfolio .image .main {
     width: 400px;
@@ -482,6 +483,9 @@ h2 {
         color: white;
     }
     .home section#about-artemkhi .block#stack ul.bubbles li {
+        border-color: white;
+    }
+    .home .block#bots button {
         border-color: white;
     }
     .home .block#portfolio .text button {

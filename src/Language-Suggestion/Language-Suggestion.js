@@ -35,6 +35,21 @@ export default function LanguageSuggestion() {
         }
     }
 
+    function createLink() {
+        const link = window.location.pathname;
+        if (!link.includes('/tr') && !link.includes('/ru')) {
+            return `${data.code !== 'en' ? '/' + data.code : ''}${link}`;
+        } else {
+            const separatedLink = link.split('/');
+            if (data.code === 'en') {
+                separatedLink.splice(1, 1);
+            } else {
+                separatedLink[1] = data.code;
+            }
+            return separatedLink.join('/');
+        }
+    }
+
     return <section className={"block" + (windowClosed || (localStorage.ArtemkhiLanguage ? lang === JSON.parse(localStorage.ArtemkhiLanguage) : navigator.language.includes(lang)) ? " closed" : "")} id="ls">
         <h3 className="question">{data.question}</h3>
         <div className="buttons">
@@ -43,7 +58,7 @@ export default function LanguageSuggestion() {
                 setWindowClosed(true);
                 }}><img src={!dark ? x : darkX} alt="x"/></button>
             <button className="recommended" onClick={() => {
-                window.location.pathname = '/' + (data.code !== 'en' ? data.code : '');
+                window.location.pathname = createLink();
                 setWindowClosed(true);
                 }}>{data.yes}</button>
         </div>

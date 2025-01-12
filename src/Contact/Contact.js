@@ -5,6 +5,7 @@ import email from '../assets/social/mail.png';
 import github from '../assets/social/github.png';
 import linkedin from '../assets/social/linkedin.png';
 import instagram from '../assets/social/instagram.png';
+import channel from '../assets/social/megaphone.png';
 
 import telegramDark from '../assets/social/telegram-dark.png';
 import whatsappDark from '../assets/social/whatsapp-dark.png';
@@ -12,6 +13,7 @@ import emailDark from '../assets/social/mail-dark.png';
 import githubDark from '../assets/social/github-dark.png';
 import linkedinDark from '../assets/social/linkedin-dark.png';
 import instagramDark from '../assets/social/instagram-dark.png';
+import channelDark from '../assets/social/megaphone-dark.png';
 
 import x from '../assets/x.png';
 import xDark from '../assets/x-dark.png';
@@ -54,10 +56,18 @@ export default function Contact({ lang, isOpened, setOpening }) {
                 <img src={!dark ? linkedin : linkedinDark} alt=''/>
                 LinkedIn
             </button>
-            <button onClick={() => window.open('https://www.instagram.com/artemkhi.me')}>
-                <img src={!dark ? instagram : instagramDark} alt=''/>
-                Instagram
-            </button>
+            {
+                lang !== 'ru' ?
+                <button onClick={() => window.open('https://www.instagram.com/artemkhi.me')}>
+                    <img src={!dark ? instagram : instagramDark} alt=''/>
+                    Instagram
+                </button>
+                :
+                <button onClick={() => window.open('https://t.me/artemkhi_me')}>
+                    <img src={!dark ? channel : channelDark} alt=''/>
+                    Tg-канал
+                </button>
+            }
         </div>
         <div className='close-bg'>
             <button className='for-mobile close'>
