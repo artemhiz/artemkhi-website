@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { en, ru, tr } from "./Language";
 import { useNavigate } from "react-router-dom";
-import cv from './assets/Artem Khi CV December.pdf';
+import ruCV from './assets/Резюме Artem Khi Январь.pdf';
+import cv from './assets/Artem Khi CV January.pdf';
 
 export default function Footer({ lang }) {
     const navigate = useNavigate();
@@ -50,7 +51,7 @@ export default function Footer({ lang }) {
             <button onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/about`)}>{data.about}</button>
             {/* <button onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/projects`)}>{data.projects}</button> */}
             <button onClick={() => window.open('https://github.com/artemhiz')}>{data.github}</button>
-            <button onClick={() => window.open(cv)}>{data.cv}</button>
+            <button onClick={() => window.open(lang === 'ru' ? ruCV : cv)}>{data.cv}</button>
         </div>
         <div className="right">
             <div className="language-place">

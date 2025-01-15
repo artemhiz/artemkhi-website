@@ -24,6 +24,7 @@ export default function LanguageSuggestion() {
     } else {
         switch (navigator.language) {
             case 'tr':
+            case 'tr-TR':
             data = tr.language_suggestion;
             break;
         case 'ru':

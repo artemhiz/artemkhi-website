@@ -52,7 +52,7 @@ export default function Contact({ lang, isOpened, setOpening }) {
                 <img src={!dark ? github : githubDark} alt=''/>
                 GitHub
             </button>
-            <button onClick={() => window.open('https://www.linkedin.com/in/artem-khizhniak-2ab451263/')}>
+            <button onClick={() => window.open('https://www.linkedin.com/in/artemkhi/')}>
                 <img src={!dark ? linkedin : linkedinDark} alt=''/>
                 LinkedIn
             </button>

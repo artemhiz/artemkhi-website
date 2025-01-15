@@ -74,7 +74,7 @@ export default function Home({ setContactsOpening }) {
                     <Link to={(lang ? `/${lang}` : '') + '/about'}>{data.about_button}</Link>
                 </div>
             </section>
-            <section className='block' id='stack' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities`)}>
+            <section className='block' id='stack' onClick={() => navigate(`${lang !== 'en' ? '/' + lang : ''}/capabilities#tools`)}>
                 <h3>{data.my_stack}</h3>
                 <ul className='bubbles'>
                     <li id='html' onClick={event => stopPropagationAndNavigate(event, `${lang !== 'en' ? '/' + lang : ''}/capabilities#html`)}>HTML/CSS</li>
@@ -83,7 +83,7 @@ export default function Home({ setContactsOpening }) {
                     <li id='node' onClick={event => stopPropagationAndNavigate(event, `${lang !== 'en' ? '/' + lang : ''}/capabilities#node-js`)}>Node.js</li>
                     {/* <li id='redux'>Redux</li> */}
                 </ul>
-                <Link onClick={event => event.stopPropagation()} to={`${lang !== 'en' ? '/' + lang : ''}/capabilities#tools`}>{data.stack_button}</Link>
+                <Link to={`${lang !== 'en' ? '/' + lang : ''}/capabilities#tools`}>{data.stack_button}</Link>
             </section>
             <section className='block' id='bots' onClick={() => navigate(`/${lang ? lang + '/' : ''}bots`)}>
                 <h3>{data.welcome_bots}</h3>
